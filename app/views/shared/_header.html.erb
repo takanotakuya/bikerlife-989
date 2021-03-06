@@ -1,80 +1,48 @@
-<header class="home loading_comp">
-  <div id="page">
-    <div id="home_head">
-      <div class="inner">
-        <h1 class="site_logo">
-          <a href="/">
-            <%= video_tag("/videos/BCLife.mp4", autoplay: :true, muted: :true, class: 'video-logo') %>
-          </a>
-        </h1>
-      <nav class="main_menu">
-        <ul>
-          <li><a href="/">RECOMMENDED CAMOSITES<span>おすすめキャンプ場</span></a></li>
-          <li><a href="/">RECOMMENDED ITEMS<span>おすすめアイテム</span></a></li>
-          <li><a href="/">LIST OF CAMOSITES<span>キャンプ場 一覧</span></a></li>
-          <li><a href="/">POSTED PHOTOS<span>投稿写真 一覧</span></a></li>
-          <li><a href="/">TROUBLE CONSULTATION<span>お悩み相談</span></a></li>
-        </ul>
-      </nav>
-      <aside class="sub_menu">
-        <ul>
-          <li><a href="/" target="_blank"><img src="写真" alt="twitter"></a></li>
-          <li><a href="/" target="_blank"><img src="写真" alt="facebook"></a></li>
-          <li><a href="/" target="_blank"><img src="写真" alt="Instagram"></a></li>
-          <li><a href="/" target="_blank"><img src="写真" alt="Youtube"></a></li>
-        </ul>
-        <form class="search_area" method="get" action="/pcms/mt/mt-search.cgi">
-          <input type="text" name="search" class="txt_h_search">
-          <button class="btn_h_search">
-            <img src="写真" alt="" class="home_only_img">
-          </button>
-          <input type="hidden" name="" value="1,2,3,4,5">
-        </form>
-      </aside>
-    </div>
-  </div>
-</header>
-
-<header id="page_head">
+<header class="home_head">
+  <%# <%= video_tag("/videos/WE ARE ALL ONE.mp4", autoplay: :true, muted: :true, class: 'video-photo') %>
   <div class="inner">
-    <p class="site_logo">
+    <h1 class="site_logo">
       <a href="/">
         <%= video_tag("/videos/BCLife.mp4", autoplay: :true, muted: :true, class: 'video-logo') %>
       </a>
-    </p>
-    <button class="btn_menu"></button>
+    </h1>
+    <nav class="main_menu">
+      <ul class="main_menu_ul">
+        <li class="main_menu_li"><a href="/">RECOMMENDED CAMOSITES<span>おすすめキャンプ場</span></a></li>
+        <li class="main_menu_li"><a href="/">RECOMMENDED ITEMS<span>おすすめアイテム</span></a></li>
+        <li class="main_menu_li"><a href="/">LIST OF CAMOSITES<span>キャンプ場 一覧</span></a></li>
+        <li class="main_menu_li"><a href="/">POSTED PHOTOS<span>投稿写真 一覧</span></a></li>
+        <li class="main_menu_li"><a href="/">TROUBLE CONSULTATION<span>お悩み相談</span></a></li>
+      </ul>
+    </nav>
+    <aside class="sub_menu">
+      <ul class="sub_menu_ul">
+        <li class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/twitter.png" alt="twitter"></a></li>
+        <li class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/facebook.png" alt="facebook"></a></li>
+        <li class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/Instagram.png" alt="Instagram"></a></li>
+        <li class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/Youtube.png" alt="Youtube"></a></li>
+      </ul>
+      <nav class="nav-login">
+        <ul class='lists-right'>
+          <%# <% if user_signed_in? %>
+            <%# <li><%= link_to current_user.nickname, root_path, class: "user-nickname" %></li> 
+            <%# <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+          <%# <% else %>
+            <li class="right"><a class="nav-login-login" href="/">LOGIN</a></li>
+            <li class="right"><a class="nav-login-sign-up" href="/">SIGNUP</a></li>
+          <%# <% end %>
+        </ul>
+      </nav>
+      <form class="search_area" method="get" action="/pcms/mt/mt-search.cgi">
+        <input type="text" name="search" class="txt_h_search">
+        <button class="btn_h_search">
+          <img src="/assets/search.png" alt="" class="home_only_img">
+        </button>
+        <input type="hidden" name="" value="1,2,3,4,5">
+      </form>
+    </aside>
   </div>
 </header>
-<nav class="side_menu">
-  <aside class="sub_menu">
-    <ul>
-      <li><a href="/" target="_blank"><img src="写真" alt="twitter"></a></li>
-      <li><a href="/" target="_blank"><img src="写真" alt="facebook"></a></li>
-      <li><a href="/" target="_blank"><img src="写真" alt="Instagram"></a></li>
-      <li><a href="/" target="_blank"><img src="写真" alt="Youtube"></a></li>
-    </ul>
-    <form class="search_area" method="get" action="/pcms/mt/mt-search.cgi">
-      <input type="text" name="search" class="txt_h_search">
-      <button class="btn_h_search">
-        <img src="写真" alt="">
-      </button>
-      <input type="hidden" name="" value="1,2,3,4,5">
-    </form>
-  </aside>
-  <ul class="main_menu">
-    <li><a href="/">RECOMMENDED CAMOSITES<span>おすすめキャンプ場</span></a></li>
-    <li><a href="/">RECOMMENDED ITEMS<span>おすすめアイテム</span></a></li>
-    <li><a href="/">LIST OF CAMOSITES<span>キャンプ場 一覧</span></a></li>
-    <li><a href="/">POSTED PHOTOS<span>投稿写真 一覧</span></a></li>
-    <li><a href="/">TROUBLE CONSULTATION<span>お悩み相談</span></a></li>
-  </ul>
-</nav>
 
-<div class="ov"></div>
 
-<div id="content">
-  <div class="image">
-    <%= video_tag("/videos/WE ARE ALL ONE.mp4", autoplay: :true, muted: :true, class: 'video-content') %>
-  </div>
-</div>
 
