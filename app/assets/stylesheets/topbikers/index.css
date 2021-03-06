@@ -1,0 +1,164 @@
+* {
+	margin:0;
+	padding:0;
+  box-sizing: border-box;
+}
+
+.body{
+  background: #f0f8ff;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  box-sizing: content-box;
+  width: 100vw;
+  height: 100vh;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  color: rgb(0, 0, 0);
+}
+
+
+.main {
+  width: 100vw;
+  display: block;
+}
+
+.contents{
+  width: 100%;
+}
+
+h2{
+  font-size: 27px;
+  text-shadow: 
+      1px 1px 1px #808000,
+      1px 1px 1px #808000,
+      1px 1px 1px #808000,
+      1px 1px 1px #808000,
+      1px 1px 1px #808000,
+      1px 1px 1px #808000,
+      1px 1px 1px #808000,
+      1px 1px 1px #808000;
+}
+
+h2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h2:before, h2:after {
+  border-top: 1px solid;
+  content: "";
+  width: 3em;
+}
+h2:before {
+  margin-right: 1em;
+}
+h2:after {
+  margin-left: 1em;
+}
+
+.top{
+  background-color: #ffffff;
+  padding: 10% 0;
+  display: block;
+}
+
+.top_head{
+
+}
+
+.head_main{
+  padding: 7% 10% 0;
+  text-align: center;
+  font-weight: 700;
+  font-family: "ＭＳ 明朝",serif;
+}
+
+.intermediate{
+  background-color: #f5f5f5;
+  padding-bottom: 3%;
+}
+
+.intermediate_head{
+  padding: 9% 0 5%;
+  position:relative;
+}
+
+.intermediate_ul{
+  padding: 6% 10% 3%;
+}
+
+.intermediate_li{
+  padding-bottom: 3%;
+  font-size: 110%;
+  text-align: center;
+}
+
+.intermediate a{
+  font-weight: 700;
+  font-family: 'Times New Roman'; 
+  padding-bottom: 3%;
+  text-decoration: none;
+}
+
+.intermediate span{
+  font-weight: 300;
+  font-family: "ＭＳ 明朝",serif;
+  position: absolute;
+  bottom: 0;
+  font-size: 70%;
+}
+
+.intermediate img{
+  width: 45%;
+  height: 30%;
+  display: block;
+  margin: 4% auto;
+  object-fit: cover;
+}
+
+.bottom{
+  background-color: #ffffff;
+
+}
+
+.bottom_head{
+  padding: 9% 0 5%;
+  position:relative;
+}
+
+.bottom_ul{
+  padding: 10% 10% 5%;
+  text-align: center;
+}
+
+.bottom_li{
+  padding-bottom: 9%;
+  font-size: 110%;
+}
+.bottom a{
+  font-weight: 700;
+  font-family: 'Times New Roman';
+  padding-bottom: 3%;
+  text-decoration: none;
+}
+
+.bottom_head span{
+  font-weight: 300;
+  font-family: "ＭＳ 明朝",serif;
+  position: absolute;
+  bottom: 0;
+  font-size: 70%;
+}
+
+.bottom img{
+  width: 35%;
+  height: 50%;
+  display: block;
+  margin: 4% auto;
+  object-fit: cover;
+}
