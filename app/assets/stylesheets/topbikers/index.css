@@ -90,6 +90,7 @@ h2:after {
 
 .intermediate_ul{
   padding: 6% 10% 3%;
+  list-style: none;
 }
 
 .intermediate_li{
@@ -134,6 +135,7 @@ h2:after {
 .bottom_ul{
   padding: 10% 10% 5%;
   text-align: center;
+  list-style: none;
 }
 
 .bottom_li{

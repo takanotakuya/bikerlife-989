@@ -41,6 +41,7 @@
 
 .main_menu_ul {
   font-size: 85%;
+  list-style: none;
   display: flex;
   justify-content: space-between;
   zoom: 1;
@@ -99,6 +100,7 @@
 
 .sub_menu_ul {
   padding: 1px 1px 0 0;
+  list-style: none;
 }
 
 .sub_menu_li{
@@ -117,6 +119,7 @@
   display: inline-block;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .right  {
