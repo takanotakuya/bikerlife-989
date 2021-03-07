@@ -97,6 +97,7 @@ h2:after {
   padding-bottom: 3%;
   font-size: 110%;
   text-align: center;
+  list-style: none;
 }
 
 .intermediate a{
@@ -141,6 +142,7 @@ h2:after {
 .bottom_li{
   padding-bottom: 9%;
   font-size: 110%;
+  list-style: none;
 }
 .bottom a{
   font-weight: 700;
