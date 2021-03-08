@@ -31,13 +31,6 @@
             <li><%= link_to 'LOGIN', new_user_session_path, class: "login" %></li>
             <li><%= link_to 'SIGNUP', new_user_registration_path, class: "sign-up" %></li>
           <% end %>
-          <%# <% if user_signed_in? %>
-            <%# <li class="right"><a class="nav-login-login" href="destroy_user_session_path">LOOUT</a></li>
-            <li class="right"><a class="nav-login-sign-up" href="new_user_registration_path">LOGIN</a></li>
-          <% else %>
-            <%# <li class="right"><a class="nav-login-login" href="new_user_session_path">LOGIN</a></li>
-            <li class="right"><a class="nav-login-sign-up" href="new_user_registration_path">SIGNUP</a></li>
-          <% end %>
         </ul>
       </nav>
       <form class="search_area" method="get" action="/pcms/mt/mt-search.cgi">
