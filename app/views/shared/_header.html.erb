@@ -24,13 +24,20 @@
       </ul>
       <nav class="nav-login">
         <ul class='lists-right'>
+          <% if user_signed_in? %>
+            <li><%= link_to current_user.nickname, root_path, class: "user-nickname" %></li> 
+            <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "logout" %></li>
+          <% else %>
+            <li><%= link_to 'LOGIN', new_user_session_path, class: "login" %></li>
+            <li><%= link_to 'SIGNUP', new_user_registration_path, class: "sign-up" %></li>
+          <% end %>
           <%# <% if user_signed_in? %>
-            <%# <li><%= link_to current_user.nickname, root_path, class: "user-nickname" %></li> 
-            <%# <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-          <%# <% else %>
-            <li class="right"><a class="nav-login-login" href="/">LOGIN</a></li>
-            <li class="right"><a class="nav-login-sign-up" href="/">SIGNUP</a></li>
-          <%# <% end %>
+            <%# <li class="right"><a class="nav-login-login" href="destroy_user_session_path">LOOUT</a></li>
+            <li class="right"><a class="nav-login-sign-up" href="new_user_registration_path">LOGIN</a></li>
+          <% else %>
+            <%# <li class="right"><a class="nav-login-login" href="new_user_session_path">LOGIN</a></li>
+            <li class="right"><a class="nav-login-sign-up" href="new_user_registration_path">SIGNUP</a></li>
+          <% end %>
         </ul>
       </nav>
       <form class="search_area" method="get" action="/pcms/mt/mt-search.cgi">
