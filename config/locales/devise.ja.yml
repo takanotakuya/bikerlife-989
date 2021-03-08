@@ -26,6 +26,9 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
         nickname: ニックネーム
+      post:
+       name: 投稿名
+       image: 画像
     models:
       user: ユーザー
   devise:
