@@ -6,7 +6,7 @@
 
   <% @posts.each do |post| %>
     <li class='list'>
-      <%= link_to post_path(post.id), method: :get do %>
+      <%= link_to posts_path(post.id), method: :get do %>
       <div class='item-img-content'>
         <%= image_tag post.image, class: "item-img" %>
       </div>
@@ -29,22 +29,12 @@
         <%= link_to "#" do %>
         <%= image_tag "/assets/mt.png", class: "item-img" %>
         <% end %>
-      </li>
-      <li class='list'>
-        <%= link_to "#" do %>
-        <%= image_tag "/assets/mt.png", class: "item-img" %>
-        <% end %>
-      </li>
-      <li class='list'>
-        <%= link_to "#" do %>
-        <%= image_tag "/assets/mt.png", class: "item-img" %>
-        <% end %>
       <% end %>
       </li>
   </ul>
 </div>
 
-<%= link_to("index#post", class: 'purchase-btn') do %>
+<%= link_to(new_post_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>投稿する</span>
   <%= image_tag '/assets/Classic.png' , size: '185x180' ,class: "purchase-btn-icon" %>
 <% end %>
