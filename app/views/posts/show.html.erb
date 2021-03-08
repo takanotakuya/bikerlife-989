@@ -1,0 +1,18 @@
+<div class="item-show">
+  <div class="item-box">
+    <div class="item-img-content">
+      <%= image_tag @post.image,class:"item-box-img" %>
+    </div>
+    <h2 class="name">
+      <%= @post.name %>
+    </h2>
+    <h5>
+      <%= @post.post_text%>
+    </h5>
+<% if user_signed_in? %>
+  <% if current_user.id == @post.user_id %>
+    <%= link_to "編集", post_path(@post.id), method: :get, class: "item-red-btn" %>
+    <p class="or-text">or</p>
+    <%= link_to "削除", posts_path(@post.id), method: :delete, class:"item-destroy" %>
+  <% end %>
+<% end %>
