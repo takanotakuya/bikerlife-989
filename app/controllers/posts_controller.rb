@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  
   def index
     @posts = Post.includes(:user).order("created_at DESC")
   end
@@ -18,6 +20,11 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+    redirect_to posts_path if @post.user != current_user
   end
 
   private
