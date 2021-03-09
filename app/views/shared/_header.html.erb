@@ -1,4 +1,6 @@
 <header class="home_head">
+  <%# <div class="intro-header" style="background-image:url(<%= asset_path "WEAREALLONE3.jpg") width=100vw height=auto" > %>
+  <%# <div class="intro-header" style="background-image:url(<%= asset_path "WEAREALLONE3.jpg" %>
   <%# <%= video_tag("/videos/WE ARE ALL ONE.mp4", autoplay: :true, muted: :true, class: 'video-photo') %>
   <div class="inner">
     <h1 class="site_logo">
@@ -15,13 +17,19 @@
         <li class="main_menu_li"><a href="/">TROUBLE CONSULTATION<span>お悩み相談</span></a></li>
       </ul>
     </nav>
-    <aside class="sub_menu">
-      <ul class="sub_menu_ul">
+    <div class="sub_menu">
+      <div class="sub_menu_conteiner">
+        <div class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/twitter.png" alt="twitter"></a></div>
+        <div class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/facebook.png" alt="facebook"></a></div>
+        <div class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/Instagram.png" alt="Instagram"></a></div>
+        <div class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/Youtube.png" alt="Youtube"></a></div>
+      </div>
+      <%# <ul class="sub_menu_ul">
         <li class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/twitter.png" alt="twitter"></a></li>
         <li class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/facebook.png" alt="facebook"></a></li>
         <li class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/Instagram.png" alt="Instagram"></a></li>
         <li class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/Youtube.png" alt="Youtube"></a></li>
-      </ul>
+      </ul> %>
       <nav class="nav-login">
         <ul class='lists-right'>
           <% if user_signed_in? %>
@@ -40,7 +48,7 @@
         </button>
         <input type="hidden" name="" value="1,2,3,4,5">
       </form>
-    </aside>
+    </div>
   </div>
 </header>
 
