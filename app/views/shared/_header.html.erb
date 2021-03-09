@@ -1,46 +1,29 @@
 <header class="home_head">
-  <%# <div class="intro-header" style="background-image:url(<%= asset_path "WEAREALLONE3.jpg") width=100vw height=auto" > %>
-  <%# <div class="intro-header" style="background-image:url(<%= asset_path "WEAREALLONE3.jpg" %>
-  <%# <%= video_tag("/videos/WE ARE ALL ONE.mp4", autoplay: :true, muted: :true, class: 'video-photo') %>
   <div class="inner">
-    <h1 class="site_logo">
-      <a href="/">
+    <div class="main_menu">
+      <div class="mains">
         <%= video_tag("/videos/BCLife.mp4", autoplay: :true, muted: :true, class: 'video-logo') %>
-      </a>
-    </h1>
-    <nav class="main_menu">
-      <ul class="main_menu_ul">
-        <li class="main_menu_li"><a href="/">RECOMMENDED CAMOSITES<span>おすすめキャンプ場</span></a></li>
-        <li class="main_menu_li"><a href="/">RECOMMENDED ITEMS<span>おすすめアイテム</span></a></li>
-        <li class="main_menu_li"><a href="/">LIST OF CAMOSITES<span>キャンプ場 一覧</span></a></li>
-        <li class="main_menu_li"><a href="../posts#index">POSTED PHOTOS<span>投稿写真 一覧</span></a></li>
-        <li class="main_menu_li"><a href="/">TROUBLE CONSULTATION<span>お悩み相談</span></a></li>
-      </ul>
-    </nav>
-    <div class="sub_menu">
-      <div class="sub_menu_conteiner">
-        <div class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/twitter.png" alt="twitter"></a></div>
-        <div class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/facebook.png" alt="facebook"></a></div>
-        <div class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/Instagram.png" alt="Instagram"></a></div>
-        <div class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/Youtube.png" alt="Youtube"></a></div>
+        <div class="menu"><a href="/">RECOMMENDED CAMOSITES<span>おすすめキャンプ場</span></a></div>
+        <div class="menu"><a href="/">RECOMMENDED ITEMS<span>おすすめアイテム</span></a></div>
+        <div class="menu"><a href="/">LIST OF CAMOSITES<span>キャンプ場 一覧</span></a></div>
+        <div class="menu"><a href="../posts#index">POSTED PHOTOS<span>投稿写真 一覧</span></a></div>
+        <div class="menu"><a href="/">TROUBLE CONSULTATION<span>お悩み相談</span></a></div>
+          <div class="sub">
+            <div class="sub_menu"><a href="/" target="_blank"><img src="/assets/twitter.png" alt="twitter"></a></div>
+            <div class="sub_menu"><a href="/" target="_blank"><img src="/assets/facebook.png" alt="facebook"></a></div>
+            <div class="sub_menu"><a href="/" target="_blank"><img src="/assets/Instagram.png" alt="Instagram"></a></div>
+            <div class="sub_menu"><a href="/" target="_blank"><img src="/assets/Youtube.png" alt="Youtube"></a></div>
+          </div>
       </div>
-      <%# <ul class="sub_menu_ul">
-        <li class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/twitter.png" alt="twitter"></a></li>
-        <li class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/facebook.png" alt="facebook"></a></li>
-        <li class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/Instagram.png" alt="Instagram"></a></li>
-        <li class="sub_menu_li"><a href="/" target="_blank"><img src="/assets/Youtube.png" alt="Youtube"></a></li>
-      </ul> %>
-      <nav class="nav-login">
-        <ul class='lists-right'>
-          <% if user_signed_in? %>
-            <li><%= link_to current_user.nickname, root_path, class: "user-nickname" %></li> 
-            <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "logout" %></li>
-          <% else %>
-            <li><%= link_to 'LOGIN', new_user_session_path, class: "login" %></li>
-            <li><%= link_to 'SIGNUP', new_user_registration_path, class: "sign-up" %></li>
-          <% end %>
-        </ul>
-      </nav>
+      <div class='lists-right'>
+        <% if user_signed_in? %>
+          <div><%= link_to current_user.nickname, root_path, class: "user" %></div> 
+          <div><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "user" %></div>
+        <% else %>
+          <div><%= link_to 'LOGIN', new_user_session_path, class: "user" %></div>
+          <div><%= link_to 'SIGNUP', new_user_registration_path, class: "user" %></div>
+        <% end %>
+      </div>
       <form class="search_area" method="get" action="/pcms/mt/mt-search.cgi">
         <input type="text" name="search" class="txt_h_search">
         <button class="btn_h_search">
@@ -51,6 +34,7 @@
     </div>
   </div>
 </header>
+
 
 
 
