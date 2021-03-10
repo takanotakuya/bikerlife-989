@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
   resources :consultations
+    resources :consultations_comments, only: :create
 end

@@ -52,7 +52,7 @@
 ### Association
 
 - belongs_to :user
-- has_many   :comments
+- has_many   :consultations_comments
 
 ## consultations_comments テーブル
 
