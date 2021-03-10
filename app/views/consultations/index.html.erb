@@ -6,7 +6,7 @@
 
   <% @consultations.each do |consultation| %>
     <li class='list'>
-      <%= link_to consultations_path(consultation.id), method: :get do %>
+      <%= link_to consultation_path(consultation.id), method: :get do %>
       <div class='item-img-content'>
         <%= consultation.name %>
       </div>
