@@ -27,8 +27,13 @@ ja:
         updated_at: 更新日
         nickname: ニックネーム
       post:
-       name: 投稿名
-       image: 画像
+        name: 投稿名
+        image: 画像
+      comments:
+        comment_text: コメント
+      consultation:
+        name: 相談名
+        post_text: 相談内容
     models:
       user: ユーザー
   devise:
