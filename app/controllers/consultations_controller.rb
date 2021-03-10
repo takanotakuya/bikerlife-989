@@ -37,6 +37,13 @@ class ConsultationsController < ApplicationController
     end
   end
 
+  def destroy
+    @consultation = Consultation.find(params[:id])
+    redirect_to consultations_path if @consultation.user != current_user
+    @consultation.destroy
+    redirect_to consultations_path
+  end
+
   private
 
   def consultation_params
