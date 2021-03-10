@@ -1,7 +1,7 @@
 .home_head {
   width: 100vw;
   height: 100vh;
-  background-image: url(../WEAREALLONE3.jpg);
+  background-image: url(/assets/WEAREALLONE3.jpg);
   background-repeat:  no-repeat;
   background-size: cover;
 }
