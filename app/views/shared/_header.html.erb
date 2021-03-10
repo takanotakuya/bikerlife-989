@@ -17,7 +17,8 @@
       </div>
       <div class='lists-right'>
         <% if user_signed_in? %>
-          <div><%= link_to current_user.nickname, root_path, class: "user" %></div> 
+          <div><%= link_to current_user.nickname, root_path, class: "user" %></div>
+          <div><%= link_to "MYPAGE", "/users/#{current_user.id}" ,class: "user"  %></div>
           <div><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "user" %></div>
         <% else %>
           <div><%= link_to 'LOGIN', new_user_session_path, class: "user" %></div>

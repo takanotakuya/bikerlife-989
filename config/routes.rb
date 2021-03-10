@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :consultations do
     resources :consultations_comments, only: :create
   end
+  resources :users, only: :show
 end

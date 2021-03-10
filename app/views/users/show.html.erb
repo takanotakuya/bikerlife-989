@@ -1,0 +1,17 @@
+<div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+    <% @posts.each do |post| %>
+    <%= link_to post_path(post.id), method: :get do %>
+    <%= image_tag post.image,class:"item-box-img" %>
+      <p><%= post.name %></p>
+      <%= post.post_text %>
+    <% end %>
+  <% end %>
+  ---------------------------------
+  <% @consultations.each do |consultation| %>
+    <%= link_to consultation_path(consultation.id), method: :get do %>
+    <p><%= consultation.name %></p>
+    <%= consultation.post_text %>
+    <% end %>
+  <% end %>
+</div>
