@@ -1,4 +1,6 @@
 <div class="contents row">
+  
+-----------------------------------
   <p><%= @nickname %>さんの投稿一覧</p>
     <% @posts.each do |post| %>
     <%= link_to post_path(post.id), method: :get do %>
