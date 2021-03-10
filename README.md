@@ -52,9 +52,9 @@
 ### Association
 
 - belongs_to :user
-- has_many   :comments
+- has_many   :consultations_comments
 
-## comments テーブル
+## consultations_comments テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
