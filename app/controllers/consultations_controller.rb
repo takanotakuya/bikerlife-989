@@ -1,6 +1,6 @@
 class ConsultationsController < ApplicationController
-  
+
   def index
-    @posts = Post.includes(:user).order("created_at DESC")
+    @consultations = Consultation.includes(:user).order("created_at DESC")
   end
 end
