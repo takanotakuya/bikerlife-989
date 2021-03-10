@@ -1,0 +1,23 @@
+<%= form_with model: @consultation, local: true do |f| %>
+
+<%= render 'shared/error_messages', model: f.object %>
+
+  <div class="new-items">
+    <div class="weight-bold-text">
+      相談名
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"相談名" %>
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        相談内容
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :post_text, class:"items-text", id:"item-info", placeholder:"相談の内容" ,rows:"7" %>
+    </div>
+  </div>
+  <div class="sell-btn-contents">
+      <%= f.submit "相談する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', consultations_path, class:"back-btn" %>
+    </div>
+<% end %>
