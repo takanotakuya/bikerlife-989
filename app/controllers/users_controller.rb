@@ -8,4 +8,10 @@ class UsersController < ApplicationController
     @posts = user.posts.includes(:user).order("created_at DESC")
     @consultations = user.consultations.includes(:user).order("created_at DESC")
   end
+
+  def edit
+  end
+
+  def update
+  end
 end
