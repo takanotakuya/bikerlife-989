@@ -43,7 +43,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     redirect_to posts_path if @post.user != current_user
     @post.destroy
-    redirect_to posts_path
+    redirect_to post_path
   end
 
   private

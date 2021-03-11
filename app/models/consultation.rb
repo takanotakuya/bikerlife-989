@@ -1,5 +1,5 @@
 class Consultation < ApplicationRecord
-  belongs_to :user, optional: true
+  belongs_to :user
   has_many :consultations_comments, foreign_key: :consultation_id, dependent: :destroy
 
   with_options presence: true do

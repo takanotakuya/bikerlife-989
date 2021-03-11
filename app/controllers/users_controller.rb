@@ -7,21 +7,10 @@ class UsersController < ApplicationController
     @self_introduction = @user.self_introduction
     @posts = @user.posts.includes(:user).order("created_at DESC")
     @consultations = @user.consultations.includes(:user).order("created_at DESC")
-    # @post = user.post(params[:id])
-    # @consultation = user.consultation.find(params[:id])
   end
 
   def edit
   end
-
-  # def update
-  #   if current_user.update(user_params)
-  #     redirect_to user_path
-  #   else
-  #     render :edit
-  #   end
-  # end
-
 
   private
 
