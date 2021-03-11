@@ -1,9 +1,13 @@
 <div class="item-show">
   <div class="item-box">
-    <p><%= @consultation.user.nickname %>さんの投稿</p>
+  <span class="name">
+      <a href="/users/<%= @consultation.user.id %>">
+        <span>投稿者</span><%= @consultation.user.nickname %>
+      </a>
+    </span>
     <h2 class="name">
       <%= @consultation.name %>
-    </h2>
+    </h2> %>
     <h5>
       <%= @consultation.post_text%>
     </h5>
