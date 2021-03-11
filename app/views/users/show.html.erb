@@ -1,6 +1,15 @@
 <div class="contents row">
   <p><%= @nickname %></p>
   <p><%= @self_introduction %></p>
+  <P>
+    <% if user_signed_in? %>
+      <% if current_user.id == @user.id%>
+        <%= link_to "編集", edit_user_registration_path, method: :get, class: "item-red-btn" %>
+        <%# <p class="or-text">or</p>
+        <%= link_to "削除", post_path(@post.id), method: :delete, class:"item-destroy" %>
+      <% end %>
+    <% end %>
+  </p>
 -----------------------------------
   <p><%= @nickname %>さんの投稿一覧</p>
     <% @posts.each do |post| %>
