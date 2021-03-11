@@ -3,7 +3,13 @@
     <div class="item-img-content">
       <%= image_tag @post.image,class:"item-box-img" %>
     </div>
-    <p><%= @post.user.nickname %>さんの投稿</p>
+    <span class="name">
+      <a href="/users/<%= @post.user.id %>">
+        <span>投稿者</span><%= @post.user.nickname %>
+      </a>
+    </span>
+    <%# <a href="/users/<%= post.user.id %>
+    <%# <p><%= @post.user.nickname %>
     <h2 class="name">
       <%= @post.name %>
     </h2>
