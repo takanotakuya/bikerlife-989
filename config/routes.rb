@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   root to: 'topbikers#index'
+  resources :topbikers, onry: [:show]
   resources :posts do
     resources :comments, only: :create
     collection do
