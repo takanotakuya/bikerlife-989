@@ -1,5 +1,6 @@
 class ConsultationsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     @consultations = Consultation.includes(:user).order("created_at DESC")
@@ -35,7 +36,7 @@ class ConsultationsController < ApplicationController
     if @consultation.update(consultation_params)
       redirect_to consultation_path(@consultation.id)
     else
-      render :edit
+      render :editf
     end
   end
 
@@ -46,10 +47,20 @@ class ConsultationsController < ApplicationController
     redirect_to consultations_path
   end
 
+  def search
+    @consultations = Consultation.search(params[:keyword])
+  end
+
   private
 
   def consultation_params
     params.require(:consultation).permit(:name, :post_text).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 
 end

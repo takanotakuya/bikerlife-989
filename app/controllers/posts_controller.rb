@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :move_to_index, except: :search
 
   def index
     @posts = Post.includes(:user).order("created_at DESC")
@@ -46,9 +47,19 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def search
+    @posts = Post.search(params[:keyword])
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:name, :post_text, :image).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
