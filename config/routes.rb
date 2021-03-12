@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   }
   root to: 'topbikers#index'
   resources :topbikers
+  resources :camps_lists, only: :index
   resources :camps_ones, only: :index
   resources :camps_twos, only: :index
   resources :camps_threes, only: :index
