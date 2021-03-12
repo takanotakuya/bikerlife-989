@@ -107,9 +107,10 @@
 
 .user{
   text-decoration: none;
-  border-radius: 7px;
+  border-radius: 5px;
   border:2.5px solid #e6e6fa;
   font-weight: 1000;
+  font-size: 13px;
   color: #e6e6fa;
   padding: 5px;
   margin: 4px 6px;
