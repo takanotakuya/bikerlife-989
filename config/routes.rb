@@ -4,6 +4,13 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   root to: 'topbikers#index'
+  resources :topbikers
+  resources :camp1, onry: :show
+  resources :camp2, onry: :show
+  resources :camp3, onry: :show
+  resources :item1, onry: :show
+  resources :item2, onry: :show
+  resources :item3, onry: :show
   resources :posts do
     resources :comments, only: :create
     collection do
