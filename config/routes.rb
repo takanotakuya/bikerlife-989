@@ -14,15 +14,9 @@ Rails.application.routes.draw do
   resources :items_threes, only: :index
   resources :posts do
     resources :comments, only: :create
-    collection do
-      get 'search'
-    end
   end
   resources :consultations do
     resources :consultations_comments, only: :create
-    collection do
-      get 'search'
-    end
   end
   resources :users, only: [:show, :edit, :update]
 end
