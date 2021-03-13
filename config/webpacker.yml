@@ -91,7 +91,7 @@ production:
   extract_css: false
 
   # Extract and emit a css file
-  extract_css: true
+  # extract_css: true
 
   # Cache manifest.json for performance
   cache_manifest: true
