@@ -7,11 +7,4 @@ class Consultation < ApplicationRecord
     validates :post_text
   end
 
-  def self.search(search)
-    if search != ""
-      Consultation.where('text LIKE(?)', "%#{search}%")
-    else
-      Consultation.all
-    end
-  end
 end
