@@ -26,45 +26,38 @@
       気になることや、少しの不安でもお気軽に投稿してください！
       </div>
     </div>
-    <div class='item-contents'>
-      <ul class='item-lists'>
-      <% @consultations.each do |consultation| %>
-        <li class='list'>
-          <%= link_to consultation_path(consultation.id), method: :get do %>
-          <div class='item-img-content'>
-            <%= consultation.name %>
+    <div class='intermediates'>
+      <h2 class="intermediates_head">TROUBLE CONSULTATION<span>〜お悩み相談 一覧〜</span></h2>
+      <div class='item-lists'>
+        <% @consultations.each do |consultation| %>
+          <div class='lists'>
+            <%= link_to consultation_path(consultation.id), method: :get do %>
+            <div class='names'>
+              <%= consultation.name %>
+            </div>
+            <div class='name_text'>
+              <%= consultation.post_text %>
+            </div>
+            <% end %>
           </div>
-          <div class='item-img-content'>
-            <%= consultation.post_text %>
-          </div>
-          <% end %>
-        </li>
-      <% end %>
-
-      <% if @consultations.length == 0 %>
-        <li class='list'>
-          <%= link_to "#" do %>
-          <%= image_tag "/assets/mt.png", class: "item-img" %>
-          <% end %>
-        </li>
-        <li class='list'>
-          <%= link_to "#" do %>
-          <%= image_tag "/assets/mt.png", class: "item-img" %>
-          <% end %>
-        </li>
-        <li class='list'>
-          <%= link_to "#" do %>
-          <%= image_tag "/assets/mt.png", class: "item-img" %>
-          <% end %>
-        </li>
         <% end %>
-      </ul>
-    </div>
 
-    <%= link_to(new_consultation_path, class: 'purchase-btn') do %>
-      <span class='purchase-btn-text'>相談する</span>
-      <%= image_tag '/assets/Classic.png' , size: '185x180' ,class: "purchase-btn-icon" %>
-    <% end %>
+        <% if @consultations.length == 0 %>
+          <div class='list'>
+            <%= link_to "#" do %>
+            <div class='item-img-content'>
+              <%= image_tag "/assets/mt.png", class: "item-img" %>
+            </div>
+            <% end %>
+          </div>
+          <% end %>
+      </div>
+    </div>
+    <div  class="push">
+      <%= link_to(new_consultation_path, class: 'purchase-btn') do %>
+        <div class='btn-shine'>PUSH 相談</div>
+      <% end %>
+    <div>
   </div>
 </main>
 
