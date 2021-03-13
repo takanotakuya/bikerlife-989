@@ -1,45 +1,67 @@
 <%= render "shared/header3" %>
 
-<div class='item-contents'>
-  <h2 class='title'>最新の投稿</h2>
-  <ul class='item-lists'>
-
-  <% @posts.each do |post| %>
-    <li class='list'>
-      <%= link_to post_path(post.id), method: :get do %>
-      <div class='item-img-content'>
-        <%= image_tag post.image, class: "item-img" %>
+<main class="main">
+  <div class="contents">
+    <div class="top">
+      <h2 class="top_head">投稿写真一覧</h2>
+      <div class="head_main">ここでは皆様の愛車のバイクやキャンプ道具、<br />
+      アウトドアで行った絶景ポイントやロマン溢れる写真などなど、<br />
+      自由な投稿をして頂けたら幸いです！！ <br />
+      <br />
+      皆様自身が行ったことない場所やおすすめグッツなど共有して頂き、<br />
+      <br />
+      「次はここ行ってみよう〜！！」<br />
+      「こんなアイテムあったんだ、次買ってみようかな」<br />
+      「ネットにはでてない穴場もまだまだあるんだな〜！！」<br />
+      <br />
+      皆様が知らないことや情報などを投稿して、<br />
+      BCLifeの発信源になって頂きたいです！<br />
+      <br />
+      よりよいBCLifeを楽しむために、どんどん投稿していきましょう！！！
       </div>
-      <h2 class="name">
-        <%= post.name %>
-      </h2>
+    </div>
+    <div class='item-contents'>
+      <ul class='item-lists'>
+      <% @posts.each do |post| %>
+        <li class='list'>
+          <%= link_to post_path(post.id), method: :get do %>
+          <div class='item-img-content'>
+            <%= image_tag post.image, class: "item-img" %>
+          </div>
+          <h2 class="name">
+            <%= post.name %>
+          </h2>
+          <% end %>
+        </li>
       <% end %>
-    </li>
-  <% end %>
 
-    <% if @posts.length == 0 %>
-      <li class='list'>
-        <%= link_to "#" do %>
-        <%= image_tag "/assets/mt.png", class: "item-img" %>
+      <% if @posts.length == 0 %>
+        <li class='list'>
+          <%= link_to "#" do %>
+          <%= image_tag "/assets/mt.png", class: "item-img" %>
+          <% end %>
+        </li>
+        <li class='list'>
+          <%= link_to "#" do %>
+          <%= image_tag "/assets/mt.png", class: "item-img" %>
+          <% end %>
+        </li>
+        <li class='list'>
+          <%= link_to "#" do %>
+          <%= image_tag "/assets/mt.png", class: "item-img" %>
+          <% end %>
+        </li>
         <% end %>
-      </li>
-      <li class='list'>
-        <%= link_to "#" do %>
-        <%= image_tag "/assets/mt.png", class: "item-img" %>
-        <% end %>
-      </li>
-      <li class='list'>
-        <%= link_to "#" do %>
-        <%= image_tag "/assets/mt.png", class: "item-img" %>
-        <% end %>
-      <% end %>
-      </li>
-  </ul>
-</div>
+      </ul>
+    </div>
 
-<%= link_to(new_post_path, class: 'purchase-btn') do %>
-  <span class='purchase-btn-text'>投稿する</span>
-  <%= image_tag '/assets/Classic.png' , size: '185x180' ,class: "purchase-btn-icon" %>
-<% end %>
+    <%= link_to(new_post_path, class: 'purchase-btn') do %>
+      <span class='purchase-btn-text'>投稿する</span>
+      <%= image_tag '/assets/Classic.png' , size: '185x180' ,class: "purchase-btn-icon" %>
+    <% end %>
+  </div>
+</main>
+
+
 
 <%= render "shared/footer" %>
