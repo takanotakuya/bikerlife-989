@@ -1,3 +1,5 @@
+<%= render "shared/seconde_header5" %>
+
 <div class="post">
   <div class="posts">
     <div class="user_name">
@@ -29,7 +31,7 @@
       <% if user_signed_in? %>
         <%= form_with(model: [@post, @comment], local: true) do |form| %>
           <%= form.text_area :comment_text, size: "50x6" %>
-          <%= form.submit "SEND" %>
+          <%= form.submit "PUSH" %>
         <% end %>
       <% else %>
         <strong class="log"><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
