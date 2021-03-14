@@ -105,6 +105,8 @@
   overflow-wrap: break-word;
   border: 3px double #C0C0C0;
   padding: 2.5%;
+  overflow: scroll;
+  height: 50px;
 }
 
 .name_text{
@@ -133,7 +135,7 @@
   display: flex;
 }
 .btn-shine {
-  color: #FFF;
+  color: #C0C0C0;
   background-color: #000;
   display: inline-block;
   font-size: 16px;

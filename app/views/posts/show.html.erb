@@ -1,46 +1,53 @@
-<div class="item-show">
-  <div class="item-box">
-    <div class="item-img-content">
-      <%= image_tag @post.image,class:"item-box-img" %>
-    </div>
-    <span class="name">
+<%= render "shared/seconde_header5" %>
+
+<div class="post">
+  <div class="posts">
+    <div class="user_name">
       <a href="/users/<%= @post.user.id %>">
         <span>投稿者</span><%= @post.user.nickname %>
       </a>
-    </span>
-    <%# <a href="/users/<%= post.user.id %>
-    <%# <p><%= @post.user.nickname %>
-    <h2 class="name">
+    </div>
+    <div class="item-img-content">
+      <%= image_tag @post.image,class:"item-box-img" %>
+    </div>
+    <div class="post_name">
       <%= @post.name %>
-    </h2>
-    <h5>
+    </div>
+    <div class="post_text">
       <%= @post.post_text%>
-    </h5>
-    <% if user_signed_in? %>
-      <% if current_user.id == @post.user_id %>
-        <%= link_to "編集", edit_post_path(@post.id), method: :get, class: "item-red-btn" %>
-        <p class="or-text">or</p>
-        <%= link_to "削除", post_path(@post.id), method: :delete, class:"item-destroy" %>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="container">
-    <% if user_signed_in? %>
-      <%= form_with(model: [@post, @comment], local: true) do |form| %>
-        <%= form.text_area :comment_text, placeholder: "コメントする", rows: "2" %>
-        <%= form.submit "SEND" %>
-      <% end %>
-    <% else %>
-      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
-    <% end %>
+    </div>
+    <div class="push">
+      <div class="purchase-btn">
+        <% if user_signed_in? %>
+          <% if current_user.id == @post.user_id %>
+            <%= link_to "編集", edit_post_path(@post.id), method: :get, class: "btn-shine" %>
+            <%= link_to "削除", post_path(@post.id), method: :delete, class:"btn-shine" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
     <div class="comments">
-      <h4>＜コメント一覧＞</h4>
-      <% @comments.each do |comment| %>
-        <p>
-          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-          <%= comment.comment_text %>
-        </p>
+      <div class="comments_title">COMMENT 投稿</div>
+      <% if user_signed_in? %>
+        <%= form_with(model: [@post, @comment], local: true) do |form| %>
+          <%= form.text_area :comment_text, size: "50x6" %>
+          <%= form.submit "PUSH" %>
+        <% end %>
+      <% else %>
+        <strong class="log"><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
       <% end %>
+      <div class="comments">
+        <div class="comments_title">＜COMMENT 一覧＞</div>
+        <% @comments.each do |comment| %>
+          <div class="comments_text">
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.comment_text %>
+          </div>
+        <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<%= render "shared/footer" %>
