@@ -19,6 +19,7 @@ ul li {
 
 a {
   color: rgb(0, 0, 0);
+  text-decoration:none; 
 }
 
 
@@ -64,6 +65,17 @@ h2:after {
 .top{
   background-color: #ffffff;
   padding: 10% 0;
+  display: block;
+}
+
+.top_s{
+  background-color: #f5f5f5;
+  padding: 10% 0;
+  display: block;
+}
+
+.top_a{
+  background-color: #ffffff;
   display: block;
 }
 

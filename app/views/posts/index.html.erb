@@ -3,7 +3,7 @@
 <main class="main">
   <div class="contents">
     <div class="top">
-      <h2 class="top_head">投稿写真一覧</h2>
+      <h2 class="top_head">投稿写真について</h2>
       <div class="head_main">ここでは皆様の愛車のバイクやキャンプ道具、<br />
       アウトドアで行った絶景ポイントやロマン溢れる写真などなど、<br />
       自由な投稿をして頂けたら幸いです！！ <br />
@@ -20,48 +20,39 @@
       よりよいBCLifeを楽しむために、どんどん投稿していきましょう！！！
       </div>
     </div>
-    <div class='item-contents'>
-      <ul class='item-lists'>
-      <% @posts.each do |post| %>
-        <li class='list'>
-          <%= link_to post_path(post.id), method: :get do %>
-          <div class='item-img-content'>
-            <%= image_tag post.image, class: "item-img" %>
+    <div class='intermediates'>
+      <h2 class="intermediates_head">POSTED PHOTOS<span>〜投稿写真 一覧〜</span></h2>
+      <div class='item-lists'>
+        <% @posts.each do |post| %>
+          <div class='list'>
+            <%= link_to post_path(post.id), method: :get do %>
+            <div class='item-img-content'>
+              <%= image_tag post.image, class: "item-img" %>
+            </div>
+            <div class="names">
+              <%= post.name %>
+            </div>
+            <% end %>
           </div>
-          <h2 class="name">
-            <%= post.name %>
-          </h2>
-          <% end %>
-        </li>
-      <% end %>
-
-      <% if @posts.length == 0 %>
-        <li class='list'>
-          <%= link_to "#" do %>
-          <%= image_tag "/assets/mt.png", class: "item-img" %>
-          <% end %>
-        </li>
-        <li class='list'>
-          <%= link_to "#" do %>
-          <%= image_tag "/assets/mt.png", class: "item-img" %>
-          <% end %>
-        </li>
-        <li class='list'>
-          <%= link_to "#" do %>
-          <%= image_tag "/assets/mt.png", class: "item-img" %>
-          <% end %>
-        </li>
         <% end %>
-      </ul>
-    </div>
 
-    <%= link_to(new_post_path, class: 'purchase-btn') do %>
-      <span class='purchase-btn-text'>投稿する</span>
-      <%= image_tag '/assets/Classic.png' , size: '185x180' ,class: "purchase-btn-icon" %>
-    <% end %>
+        <% if @posts.length == 0 %>
+          <div class='list'>
+            <%= link_to "#" do %>
+            <div class='item-img-content'>
+              <%= image_tag "/assets/mt.png", class: "item-img" %>
+            </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div  class="push">
+      <%= link_to(new_post_path, class: 'purchase-btn') do %>
+        <div class='btn-shine'>PUSH 投稿</div>
+      <% end %>
+    </div>
   </div>
 </main>
-
-
 
 <%= render "shared/footer" %>
