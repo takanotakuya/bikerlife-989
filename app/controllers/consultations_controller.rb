@@ -31,7 +31,7 @@ class ConsultationsController < ApplicationController
 
   def update
     @consultation = Consultation.find(params[:id])
-    redirect_to consultations_path if @consultation.user != current_user
+    return redirect_to consultations_path if @consultation.user != current_user
     if @consultation.update(consultation_params)
       redirect_to consultation_path(@consultation.id)
     else
