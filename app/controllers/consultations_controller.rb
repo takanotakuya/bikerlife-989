@@ -52,3 +52,4 @@ class ConsultationsController < ApplicationController
     params.require(:consultation).permit(:name, :post_text).merge(user_id: current_user.id)
   end
 end
+
