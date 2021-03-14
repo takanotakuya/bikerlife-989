@@ -1,0 +1,69 @@
+.item-img-content{
+  width: 100%;
+  height: 100%;
+}
+
+.item-box-img{
+  border-radius: 20px;
+  width: 50%;
+  height: 50%;
+}
+
+.user_name{
+  font-size: 20px;
+  font-weight: 600;
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+  border-bottom: 1px solid #C0C0C0;
+  border-top: 1px solid #C0C0C0;
+  margin: 0 20% 5%;
+  padding: 1% 0;
+}
+
+.user_name span{
+  font-size: 15px;
+  font-family: "ＭＳ 明朝",serif;
+}
+
+.post_name{
+  font-size: 25px;
+  font-weight: 600;
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+  border: 3px double #C0C0C0;
+  display: inline-block;
+  padding: 3px 2%;
+  margin: 4% 0 2%;
+  overflow: scroll;
+  height: 47px;
+  text-align: center;
+  justify-content: center;
+}
+
+.post_text{
+  font-size: 20px;
+  font-weight: 400;
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+  margin: 1% 3% 8%;
+}
+
+.comments{
+  width: 100%;
+  height: 100%;
+}
+
+.comments_title{
+  font-size: 20px;
+  font-family: "ＭＳ 明朝",serif;
+  margin: 5% 0 3%;
+}
+
+.log{
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "ＭＳ 明朝",serif;
+}
+
+.comments_text{
+  padding-bottom: 1%;
+  margin:0 15% 3%;
+  border-bottom: 1px solid #C0C0C0;
+}
