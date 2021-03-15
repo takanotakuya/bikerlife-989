@@ -20,24 +20,25 @@
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
 
-      <div class="weight-bold-texts">
-        <%= f.label :password %><br /> <i>(変更したくない場合は空白のままにします)</i><br />
-        <%= f.password_field :password, autocomplete: "new-password", :size=>"25" %>
-        <% if @minimum_password_length %>
-          <br />
-          <em><%= @minimum_password_length %> 文字以上</em>
-        <% end %>
-      </div>
+      <%# <div class="weight-bold-texts"> %>
+        <%# <%= f.label :password<br /> <i>(変更したくない場合は空白のままにします)</i><br /> %>
+        <%# <%= f.password_field :password, autocomplete: "new-password", :size=>"25" %>
+        <%# <% if @minimum_password_length %>
+          <%# <br /> %>
+          <%# <em><%= @minimum_password_length 文字以上</em> %>
+        <%# <% end %>
+      <%# </div> %>
 
-      <div class="weight-bold-texts">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", :size=>"25" %>
-      </div>
+      <%# <div class="weight-bold-texts"> %>
+        <%# <%= f.label :password_confirmation<br /> %>
+        <%# <%= f.password_field :password_confirmation, autocomplete: "new-password", :size=>"25" %>
+      <%# </div> %>
 
-      <% if false %>
-        <div><%= f.label :current_password %> <i><%= t(".current_password_warning") %></i><br />
-        <%= f.password_field :current_password %></div>
-      <% end %>
+      <%# <% if false %>
+        <%# <div><%= f.label :current_password %> 
+        <%# <i><%= t(".current_password_warning")</i><br /> %>
+        <%# <%= f.password_field :current_password</div> %>
+      <%# <% end %>
 
       <div class="weight-bold-texts">
         <%= f.label :self_introduction %>（任意）<br />

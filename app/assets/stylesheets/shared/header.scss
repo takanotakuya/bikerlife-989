@@ -118,18 +118,19 @@
 }
 
 .txt_h_search {
-  height: 30%;
+  height: 10%;
   display: block;
-  border: 0;
-  border-bottom: 2.5px solid #e6e6fa;
-  background: none;
-  color: #00ffff;
+
 }
 
 .search_area{
-display: flex;
-justify-content: flex-end;
-padding-top: 3%;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 3%;
 }
 
-
+.btns{
+  background: none;
+  color: #000;
+  border-bottom: 2.5px solid #e6e6fa;
+}

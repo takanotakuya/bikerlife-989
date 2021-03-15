@@ -28,18 +28,14 @@
       </div>
 
       <%= search_form_for @q, url: search_posts_path do |f| %>
-        <%= f.label :name_cont, '投稿検索' %>
-        <%= f.search_field :name_or_post_text_cont %> 
+      <div class="search_area">
+        <%= f.search_field :name_or_post_text_cont, class: "btns" %> 
         <br>
-        <%= f.submit '検索' %>
+        <%= button_tag type: :submit do %>
+          <%= image_tag "search.png", :width => '17', :height => '17' %>
+        <% end %>
+      </div>
       <% end %>
-
-      <form class="search_area" method="get" action="/">
-        <input type="text" name="search" class="txt_h_search">
-        <button class="btn_h_search">
-          <img src="/images/search.png" alt="" class="home_only_img">
-        </button>
-      </form>
     </div>
   </div>
 </header>
