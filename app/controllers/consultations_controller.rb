@@ -1,5 +1,6 @@
 class ConsultationsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_q, only: [:index, :search]
 
   def index
     @consultations = Consultation.includes(:user).order("created_at DESC")
@@ -46,9 +47,17 @@ class ConsultationsController < ApplicationController
     redirect_to consultations_path
   end
 
+  def search
+    @results = @q.result
+  end
+
   private
 
   def consultation_params
     params.require(:consultation).permit(:name, :post_text).merge(user_id: current_user.id)
+  end
+
+  def set_q
+    @q = Consultation.ransack(params[:q])
   end
 end
