@@ -1,0 +1,21 @@
+<%= render "shared/seconde_header4" %>
+
+<div class='intermediatesse'>
+  <h2 class="intermediates_head">検索結果</h2>
+  <div class='item-lists'>
+    <% @results.each do |consultation| %>
+      <div class='lists'>
+        <%= link_to consultation_path(consultation.id), method: :get do %>
+        <div class='names'>
+          <td><%= consultation.name %></td>
+        </div>
+        <div class='name_text'>
+          <td><%= consultation.post_text %></td>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

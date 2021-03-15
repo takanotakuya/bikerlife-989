@@ -26,6 +26,14 @@
           <div><%= link_to 'SIGNUP', new_user_registration_path, class: "user" %></div>
         <% end %>
       </div>
+
+      <%= search_form_for @q, url: search_consultations_path do |f| %>
+        <%= f.label :name_cont, '相談検索' %>
+        <%= f.search_field :name_or_post_text_cont %> 
+        <br>
+        <%= f.submit '検索' %>
+      <% end %>
+      
       <form class="search_area" method="get" action="/">
         <input type="text" name="search" class="txt_h_search">
         <button class="btn_h_search">
