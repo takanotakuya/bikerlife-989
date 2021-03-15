@@ -1,40 +1,44 @@
-<div class="contents_row">
-  <div class="container">
-    <h2>Sign up</h2>
+<%= render "shared/seconde_header6" %>
+
+<div class="post">
+  <div class="posts">
+    <h2 class="up">SIGN UP</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
 
-      <div class="field">
+      <div class="weight-bold-texts">
         <%= f.label :nickname %> <br />
-        <%= f.text_field :nickname, autofocus: true %>
+        <%= f.text_field :nickname, autofocus: true, :size=>"20" %>
       </div>
 
-      <div class="field">
+      <div class="weight-bold-texts">
         <%= f.label :email %><br />
-        <%= f.email_field :email %>
+        <%= f.email_field :email, :size=>"30" %>
       </div>
 
-      <div class="field">
+      <div class="weight-bold-texts">
         <%= f.label :password %>
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %>文字以上)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", :size=>"25" %>
       </div>
 
-      <div class="field">
+      <div class="weight-bold-texts">
         <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", :size=>"25" %>
       </div>
 
-      <div class="field">
+      <div class="weight-bold-texts">
         <%= f.label :self_introduction %>（任意）<br />
-        <%= f.text_field :self_introduction %>
+        <%= f.text_area :self_introduction, size: "60x6" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "SIGN UP" %>
       </div>
     <% end %>
   </div>
 </div>
+
+<%= render "shared/footer" %>
