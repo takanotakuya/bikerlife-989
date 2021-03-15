@@ -1,31 +1,35 @@
-<div class="contents_ro">
-  <div class="container">
-    <h2>Log in</h2>
+<%= render "shared/seconde_header6" %>
+
+<div class="post">
+  <div class="posts">
+    <h2 class="up">LOG IN</h2>
     <div class='login-flash-message'>
       <%= flash[:notice] %>
       <%= flash[:alert] %>
     </div>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <div class="field">
+      <div class="weight-bold-texts">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.email_field :email, autofocus: true, :size=>"30" %>
       </div>
 
-      <div class="field">
+      <div class="weight-bold-texts">
         <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", :size=>"25" %>
       </div>
 
-      <% if devise_mapping.rememberable? %>
-        <div class="field">
+      <%# <% if devise_mapping.rememberable? %>
+        <%# <div class="weight-bold-texts">
           <%= f.label :remember_me %><br />
-          <%= f.check_box :remember_me %>
-        </div>
-      <% end -%>
+          <%# <%= f.check_box :remember_me %>
+        <%# </div> %>
+      <%# <% end -%>
 
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <%= f.submit "LOG IN" %>
       </div>
     <% end %>
   </div>
 </div>
+
+<%= render "shared/footer" %>
