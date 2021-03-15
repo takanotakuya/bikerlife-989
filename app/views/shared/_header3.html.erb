@@ -27,22 +27,15 @@
         <% end %>
       </div>
 
-      <%# <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
-        <%# <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-        <%# <%= form.submit "検索", class: "search-btn" %>
-      <%# <% end %>
-      <%# <div class="contents row">
-        <% @posts.each do |post| %>
-          <%# <%= render partial: "post", locals: { post: post } %>
-        <%# <% end %>
-      <%# </div> %>
-
-      <form class="search_area" method="get" action="/">
-        <input type="text" name="search" class="txt_h_search">
-        <button class="btn_h_search">
-          <img src="/images/search.png" alt="" class="home_only_img">
-        </button>
-      </form>
+      <%= search_form_for @q, url: search_posts_path do |f| %>
+      <div class="search_area">
+        <%= f.search_field :name_or_post_text_cont, class: "btns" %> 
+        <br>
+        <%= button_tag type: :submit do %>
+          <%= image_tag "search.png", :width => '17', :height => '17' %>
+        <% end %>
+      </div>
+      <% end %>
     </div>
   </div>
 </header>
