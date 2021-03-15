@@ -37,10 +37,33 @@
         <% end %>
 
         <% if @posts.length == 0 %>
+          <div class='list_no'>
+            <%= link_to "#" do %>
+            <div class='item-img-content'>
+              <%= image_tag "/images/harley.png", class: "item-img_no" %>
+            </div>
+            <div class="names_no">
+              愛車 HARLEY
+            </div>
+            <% end %>
+          </div>
           <div class='list'>
             <%= link_to "#" do %>
             <div class='item-img-content'>
-              <%= image_tag "/images/mt.png", class: "item-img" %>
+              <%= image_tag "/images/ten.png", class: "item-img_no" %>
+            </div>
+            <div class="names_no">
+              キャンプギア
+            </div>
+            <% end %>
+          </div>
+          <div class='list'>
+            <%= link_to "#" do %>
+            <div class='item-img-content'>
+              <%= image_tag "/images/giar.png", class: "item-img_no" %>
+            </div>
+            <div class="names_no">
+              おすすめテント
             </div>
             <% end %>
           </div>

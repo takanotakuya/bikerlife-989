@@ -1,29 +1,61 @@
-<div class="contents row">
-  <p><%= @nickname %></p>
-  <p><%= @self_introduction %></p>
-  <P>
-    <% if user_signed_in? %>
-      <% if current_user.id == @user.id%>
-        <%= link_to "編集", edit_user_registration_path, method: :get, class: "item-red-btn" %>
-        <%# <p class="or-text">or</p>
-        <%= link_to "削除", post_path(@post.id), method: :delete, class:"item-destroy" %>
+<%= render "shared/seconde_header6" %>
+
+<div class="post">
+  <div class="posts">
+    <div class="user_name">
+      <%= @nickname %>
+    </div>
+    <div class="post_text">
+      <%= @self_introduction %>
+    </div>
+    <div class="push">
+      <div class="purchase-btn">
+        <% if user_signed_in? %>
+          <% if current_user.id == @user.id%>
+            <%= link_to "編集", edit_user_registration_path, method: :get, class: "btn-shine" %>
+            <%# <%= link_to "削除", post_path(@post.id), method: :delete, class:"btn-shine" %> %>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+  <div class="user_names">
+    <p><%= @nickname %><span>さんの投稿一覧</span></p>
+  </div>
+  <div class='intermediatesse'>
+    <div class='item-lists'>
+      <% @posts.each do |post| %>
+        <div class='list'>
+          <%= link_to post_path(post.id), method: :get do %>
+          <div class='item-img-content'>
+            <%= image_tag post.image,class:"item-img" %>
+          </div>
+          <div class="names">
+            <%= post.name %>
+          </div>
+          <% end %>
+        </div>
       <% end %>
-    <% end %>
-  </p>
------------------------------------
-  <p><%= @nickname %>さんの投稿一覧</p>
-    <% @posts.each do |post| %>
-    <%= link_to post_path(post.id), method: :get do %>
-    <%= image_tag post.image,class:"item-box-img" %>
-      <p><%= post.name %></p>
-      <%= post.post_text %>
-    <% end %>
-  <% end %>
-  ---------------------------------
-  <% @consultations.each do |consultation| %>
-    <%= link_to consultation_path(consultation.id), method: :get do %>
-    <p><%= consultation.name %></p>
-    <%= consultation.post_text %>
-    <% end %>
-  <% end %>
+    </div>
+  </div>
+  <div class="user_names">
+    <p><%= @nickname %><span>さんの相談一覧</span></p>
+  </div>
+  <div class='intermediatesse'>
+    <div class='item-lists'>
+      <% @consultations.each do |consultation| %>
+        <div class='lists'>
+          <%= link_to consultation_path(consultation.id), method: :get do %>
+          <div class='names'>
+            <%= consultation.name %>
+          </div>
+          <div class='name_text'>
+            <%= consultation.post_text %>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+<%= render "shared/footer" %>

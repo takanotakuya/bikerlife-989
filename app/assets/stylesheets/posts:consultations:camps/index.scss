@@ -32,6 +32,15 @@
   width: 400px;
 }
 
+.list_no{
+  padding-top: 6%;
+  width: 400px;
+}
+
+.item-img_no{
+  opacity: 0.5;
+}
+
 .lists{
   padding-top: 6%;
   width: 400px;
@@ -109,6 +118,19 @@
   height: 50px;
 }
 
+.names_no{
+  font-weight: 700;
+  font-family: 'Times New Roman'; 
+  text-align: center;
+  font-size: 20px;
+  overflow-wrap: break-word;
+  border: 3px double #C0C0C0;
+  padding: 2.5%;
+  overflow: scroll;
+  height: 50px;
+  opacity: 0.5;
+}
+
 .name_text{
   font-family: "ＭＳ 明朝",serif;
   font-weight: 600;
@@ -118,6 +140,18 @@
   border-right: 3px dashed #C0C0C0;
   border-bottom: 3px dashed #C0C0C0;
   height: 90%;
+}
+
+.name_text_no{
+  font-family: "ＭＳ 明朝",serif;
+  font-weight: 600;
+  font-size: 110%;
+  overflow-wrap: break-word;
+  border-left: 3px dashed #C0C0C0;
+  border-right: 3px dashed #C0C0C0;
+  border-bottom: 3px dashed #C0C0C0;
+  height: 90%;
+  opacity: 0.5;
 }
 
 .push{
