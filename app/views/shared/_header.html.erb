@@ -3,17 +3,17 @@
     <div class="main_menu">
       <div class="mains">
         <%= video_tag("/videos/BCLife.mp4", autoplay: :true, muted: :true, class: 'video-logo') %>
-        <div class="menu"><a href="../topbikers#index">TOP PAGE<span>トップページ</span></a></div>
-        <div class="menu"><a href="#camp">RECOMMENDED CAMOSITES<span>おすすめキャンプ場</span></a></div>
-        <div class="menu"><a href="#item">RECOMMENDED ITEMS<span>おすすめアイテム</span></a></div>
-        <div class="menu"><a href="../camps_lists#index">LIST OF CAMOSITES<span>キャンプ場 一覧</span></a></div>
-        <div class="menu"><a href="../posts#index">POSTED PHOTOS<span>投稿写真 一覧</span></a></div>
-        <div class="menu"><a href="../consultations#index">TROUBLE CONSULTATION<span>お悩み相談</span></a></div>
+        <div class="menu"><%= link_to "TOP PAGE", root_path %><span>トップページ</span></div>
+        <div class="menu"><%= link_to "RECOMMENDED CAMOSITES", "https://bikerlife-989.herokuapp.com/#camp" %><span>おすすめキャンプ場</span></div>
+        <div class="menu"><%= link_to "RECOMMENDED ITEMS", "https://bikerlife-989.herokuapp.com/#item" %><span>おすすめアイテム</span></div>
+        <div class="menu"><%= link_to "LIST OF CAMOSITES", camps_lists_path %><span>キャンプ場 一覧</span></div>
+        <div class="menu"><%= link_to "POSTED PHOTOS", posts_path %><span>投稿写真 一覧</span></div>
+        <div class="menu"><%= link_to "TROUBLE CONSULTATION", consultations_path %><span>お悩み相談</span></div>
           <div class="sub">
-            <div class="sub_menu"><a href="#" target="_blank"><img src="/images/twitter.png" alt="twitter"></a></div>
-            <div class="sub_menu"><a href="#" target="_blank"><img src="/images/facebook.png" alt="facebook"></a></div>
-            <div class="sub_menu"><a href="#" target="_blank"><img src="/images/Instagram.png" alt="Instagram"></a></div>
-            <div class="sub_menu"><a href="#" target="_blank"><img src="/images/Youtube.png" alt="Youtube"></a></div>
+            <div class="sub_menu"><%= link_to image_tag(src= "twitter.png", class: "sub_menu"), root_path %></div>
+            <div class="sub_menu"><%= link_to image_tag(src= "facebook.png", class: "sub_menu"), root_path %></div>
+            <div class="sub_menu"><%= link_to image_tag(src= "Instagram.png", class: "sub_menu"), root_path %></div>
+            <div class="sub_menu"><%= link_to image_tag(src= "Youtube.png", class: "sub_menu"), root_path %></div>
           </div>
       </div>
       <div class='lists-right'>
