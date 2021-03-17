@@ -1,10 +1,10 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_one_attached :image
+  has_many_attached :images
   has_many :comments, foreign_key: :post_id, dependent: :destroy
 
   with_options presence: true do
     validates :name
-    validates :image
+    validates :images
   end
 end

@@ -13,7 +13,7 @@
         <% if user_signed_in? %>
           <% if current_user.id == @user.id%>
             <%= link_to "編集", edit_user_registration_path, method: :get, class: "btn-shine" %>
-            <%# <%= link_to "削除", post_path(@post.id), method: :delete, class:"btn-shine" %> %>
+            <%# <%= link_to "削除", post_path(@post.id), method: :delete, class:"btn-shine" %>
           <% end %>
         <% end %>
     </div>
@@ -27,7 +27,9 @@
         <div class='list'>
           <%= link_to post_path(post.id), method: :get do %>
           <div class='item-img-content'>
-            <%= image_tag post.image,class:"item-img" %>
+            <%if post.images.count > 0 %>
+              <%= image_tag post.images.first, class:'item-box-img' %>
+            <% end %>
           </div>
           <div class="names">
             <%= post.name %>

@@ -11,7 +11,11 @@
         投稿画像
         <span class="indispensable">必須</span>
       </div>
-      <%= f.file_field :image, id:"item-image" %>
+      <%= f.file_field :images, name: 'post[images][]', id: "item-image" %>
+      <div class="items-box-img", id="image-lists" ></div>
+      <% @post.images.each do |image| %>
+        <%= image_tag image, class: 'item-box-img' %>
+      <% end %>
     </div>
     <div class="new-items">
       <div class="weight-bold-text">
