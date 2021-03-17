@@ -27,7 +27,9 @@
           <div class='list'>
             <%= link_to post_path(post.id), method: :get do %>
             <div class='item-img-content'>
-              <%= image_tag post.image, class: "item-img" %>
+              <%if post.images.count > 0 %>
+                <%= image_tag post.images.first, class:'item-box-img' %>
+              <% end %>
             </div>
             <div class="names">
               <%= post.name %>
@@ -35,7 +37,8 @@
             <% end %>
           </div>
         <% end %>
-
+      </div>
+      <div class='item-lists'>
         <% if @posts.length == 0 %>
           <div class='list_no'>
             <%= link_to "#" do %>
