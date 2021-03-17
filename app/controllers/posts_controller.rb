@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_q, only: [:index, :search]
+  before_action :set_item, only: [:edit, :show, :update, :destroy]
+  before_action :redirect, only: [:edit, :destroy]
 
   def index
     @posts = Post.includes(:user).order("created_at DESC")
@@ -20,18 +22,14 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments.includes(:user).order("created_at DESC")
   end
 
   def edit
-    @post = Post.find(params[:id])
-    redirect_to posts_path if @post.user != current_user
   end
 
   def update
-    @post = Post.find(params[:id])
     return redirect_to posts_path if @post.user != current_user
     if @post.update(post_params)
       redirect_to post_path(@post.id)
@@ -40,15 +38,13 @@ class PostsController < ApplicationController
     end
   end
 
-  def search
-    @results = @q.result
-  end
-
   def destroy
-    @post = Post.find(params[:id])
-    redirect_to posts_path if @post.user != current_user
     @post.destroy
     redirect_to posts_path
+  end
+
+  def search
+    @results = @q.result
   end
 
   private
@@ -59,5 +55,13 @@ class PostsController < ApplicationController
 
   def set_q
     @q = Post.ransack(params[:q])
+  end
+
+  def set_item
+    @post = Post.find(params[:id])
+  end
+
+  def redirect
+    redirect_to posts_path if @post.user != current_user
   end
 end

@@ -1,6 +1,8 @@
 class ConsultationsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_q, only: [:index, :search]
+  before_action :set_item, only: [:edit, :show, :update, :destroy]
+  before_action :redirect, only: [:edit, :destroy]
 
   def index
     @consultations = Consultation.includes(:user).order("created_at DESC")
@@ -20,18 +22,14 @@ class ConsultationsController < ApplicationController
   end
 
   def show
-    @consultation = Consultation.find(params[:id])
     @consultations_comment = ConsultationsComment.new
     @consultations_comments = @consultation.consultations_comments.includes(:user).order("created_at DESC")
   end
 
   def edit
-    @consultation = Consultation.find(params[:id])
-    redirect_to consultations_path if @consultation.user != current_user
   end
 
   def update
-    @consultation = Consultation.find(params[:id])
     return redirect_to consultations_path if @consultation.user != current_user
     if @consultation.update(consultation_params)
       redirect_to consultation_path(@consultation.id)
@@ -41,8 +39,6 @@ class ConsultationsController < ApplicationController
   end
 
   def destroy
-    @consultation = Consultation.find(params[:id])
-    redirect_to consultations_path if @consultation.user != current_user
     @consultation.destroy
     redirect_to consultations_path
   end
@@ -59,5 +55,13 @@ class ConsultationsController < ApplicationController
 
   def set_q
     @q = Consultation.ransack(params[:q])
+  end
+
+  def set_item
+    @consultation = Consultation.find(params[:id])
+  end
+
+  def redirect
+    redirect_to consultations_path if @consultation.user != current_user
   end
 end
