@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @nickname = @user.nickname
+    @image = @user.image
     @self_introduction = @user.self_introduction
     @posts = @user.posts.includes(:user).order("created_at DESC")
     @consultations = @user.consultations.includes(:user).order("created_at DESC")
@@ -15,6 +16,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :self_introduction)
+    params.require(:user).permit(:name, :email, :password, :self_introduction, :image)
   end
 end

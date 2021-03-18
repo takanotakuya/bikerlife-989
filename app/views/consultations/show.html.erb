@@ -7,7 +7,7 @@
         <span>投稿者</span><%= @consultation.user.nickname %>
       </a>
     </div>
-    <div class="post_name">
+    <div class="posts_name">
       <%= @consultation.name %>
     </div>
     <div class="post_text">
@@ -37,6 +37,15 @@
         <div class="comments_title">＜COMMENT 一覧＞</div>
         <% @consultations_comments.each do |consultations_comment| %>
           <div class="comments_text">
+            <% if consultations_comment.user.image? %>
+              <div class="imas">
+                <%= image_tag consultations_comment.user.image.url %>
+              </div>
+            <% else %>
+              <div class="imass">
+                <%= image_tag "/images/hito.png" %>
+              </div>
+            <% end %>
             <strong><%= link_to consultations_comment.user.nickname, "/users/#{consultations_comment.user_id}" %>：</strong>
             <%= consultations_comment.comment_text %> 
           </div>

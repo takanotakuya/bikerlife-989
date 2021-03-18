@@ -38,6 +38,19 @@
   justify-content: center;
 }
 
+.posts_name{
+  font-size: 25px;
+  font-weight: 600;
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+  border: 3px double #C0C0C0;
+  display: inline-block;
+  padding: 3px 2%;
+  overflow: scroll;
+  height: 47px;
+  text-align: center;
+  justify-content: center;
+}
+
 .post_text{
   font-size: 20px;
   font-weight: 400;
@@ -66,6 +79,7 @@
   padding-bottom: 1%;
   margin:0 15% 3%;
   border-bottom: 1px solid #C0C0C0;
+  word-wrap: break-word;
 }
 
 .likes{
