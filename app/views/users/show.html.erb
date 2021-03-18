@@ -5,6 +5,15 @@
     <div class="user_name">
       <%= @nickname %>
     </div>
+    <% if @user.image? %>
+      <div class="ima">
+        <%= image_tag @user.image.url %>
+      </div>
+    <% else %>
+      <div class="ima">
+        <%= image_tag "/images/hito.png" %>
+      </div>
+    <% end %>
     <div class="post_text">
       <%= @self_introduction %>
     </div>

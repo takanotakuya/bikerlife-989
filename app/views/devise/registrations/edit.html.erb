@@ -7,7 +7,13 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="weight-bold-texts">
-        <%= f.label :nickname %> <br />
+        <%= f.label :アイコン画像 %><br />
+        <%= f.file_field :image %>
+        <div id="image-list"></div>
+      </div>
+
+      <div class="weight-bold-texts">
+        <%= f.label :nickname %><br />
         <%= f.text_field :nickname, autofocus: "nickname", :size=>"20" %>
       </div>
 

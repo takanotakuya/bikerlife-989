@@ -18,6 +18,15 @@
       </div>
       <div class='lists-right'>
         <% if user_signed_in? %>
+          <% if current_user.image? %>
+            <div class="imas">
+              <%= image_tag current_user.image.url %>
+            </div>
+          <% else %>
+            <div class="imass">
+              <%= image_tag "/images/hito.png" %>
+            </div>
+          <% end %>
           <div><%= link_to current_user.nickname, root_path, class: "user" %></div>
           <div><%= link_to "MYPAGE", "/users/#{current_user.id}" ,class: "user"  %></div>
           <div><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "user" %></div>

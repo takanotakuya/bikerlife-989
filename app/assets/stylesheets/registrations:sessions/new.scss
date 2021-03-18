@@ -41,3 +41,41 @@
   object-fit: cover;
   border-radius: 20px;
 }
+
+.ima img{
+  width:200px;
+	height:200px;
+	object-fit:cover;
+	border-radius:50%;
+  margin-bottom: 3%;
+  border: 2px solid;
+}
+
+.imas img{
+  width:50px;
+	height:50px;
+	object-fit:cover;
+	border-radius:50%;
+  margin-right: 8%;
+  border: 1px solid;
+  margin: -8px 10px 0 0;
+}
+
+.imass img{
+  width:40px;
+	height:40px;
+	object-fit:cover;
+	border-radius:50%;
+  margin-right: 8%;
+  border: 1px solid;
+  margin: -8px 10px 0 0;
+}
+
+.weight-bold-texts img{
+  width:200px;
+	height:200px;
+	object-fit:cover;
+	border-radius:50%;
+  margin-bottom: 3%;
+  border: 2px solid;
+}
