@@ -8,6 +8,7 @@
 | encrypted_password | string | null: false               |
 | nickname           | string | null: false               |
 | self_introduction  | text   |                           |
+| image              | string |                           |
 
 ### Association
 
