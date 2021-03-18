@@ -13,6 +13,7 @@
 
 - has_many :posts
 - has_many :comments
+- has_many :likes
 - has_many :consultations
 - has_many :consultations_comments
 
@@ -28,6 +29,7 @@
 
 - belongs_to :user
 - has_many   :comments
+- has_many :likes
 
 ## comments テーブル
 
@@ -41,6 +43,19 @@
 
 - belongs_to :user
 - belongs_to :post
+
+## likes テーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| user         | references | null: false, foreign_key: true |
+| post         | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :post
+
 
 ## consultations テーブル
 
