@@ -1,0 +1,16 @@
+<%if user_signed_in? %>
+  <% if Like.find_by(user_id: current_user.id, post_id: post.id) %>
+    <%=link_to post_like_path(post, post.likes), {method: "delete", remote: true, class: "likes-count"} do %>
+      <i class="fas fa-heart haert-red fa-lg faa-pulse animated-hover"></i>
+      <%= post.likes.count %><p class="likes">いいね済</p>
+    <% end %>
+  <% else %>
+    <%=link_to post_likes_path(post), {method: "post", remote: true, class: "likes-count"} do %>
+      <i class="far fa-heart heart fa-lg faa-pulse animated-hover"></i>
+      <%= post.likes.count %><p class="likes">いいね!!</p>
+    <% end %>
+  <% end %>
+<% else %>
+  <i class="far fa-heart fa-lg"></i>
+  <%= post.likes.count %><p class="logs">※※※ 「いいね!!」するには新規登録/ログインが必要です ※※※</p>
+<% end %>

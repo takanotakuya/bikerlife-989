@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :items_threes, only: :index
   resources :posts do
     resources :comments, only: :create
+    resources :likes, only: [:create, :destroy]
     collection do
       get 'search'
     end
