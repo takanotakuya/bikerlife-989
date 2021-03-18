@@ -18,6 +18,9 @@
     <div class="post_text">
       <%= @post.post_text%>
     </div>
+    <div id="like-<%= @post.id %>">
+      <%= render 'likes/like', { post: @post} %>
+    </div>
     <div class="push">
       <div class="purchase-btn">
         <% if user_signed_in? %>

@@ -31,7 +31,7 @@
   border: 3px double #C0C0C0;
   display: inline-block;
   padding: 3px 2%;
-  margin: 4% 0 2%;
+  margin: 4% 0 -4%;
   overflow: scroll;
   height: 47px;
   text-align: center;
@@ -66,4 +66,25 @@
   padding-bottom: 1%;
   margin:0 15% 3%;
   border-bottom: 1px solid #C0C0C0;
+}
+
+.likes{
+  margin-bottom: 4%;
+}
+
+.haert-red{
+  color: red;
+  text-shadow: 0 0 2px #000;
+}
+
+.heart{
+  color: red;
+  text-shadow: 0 0 1.5px #000;
+}
+
+.logs{
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "ＭＳ 明朝",serif;
+  margin-bottom: 4%;
 }
