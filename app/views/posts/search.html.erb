@@ -7,7 +7,7 @@
       <div class='list'>
         <%= link_to post_path(post.id), method: :get do %>
         <div class='item-img-content'>
-          <td><%= image_tag post.image, class: "item-img" %></td>
+          <td><%= image_tag post.images.first, class: "item-img" %></td>
         </div>
         <div class="names">
           <td><%= post.name %></td>
