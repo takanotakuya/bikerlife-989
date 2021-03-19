@@ -57,6 +57,9 @@
                 <%= image_tag "/images/hito.png" %>
               </div>
             <% end %>
+            <div class="posts_date">
+              <pre>投稿日時</pre><%= comment.updated_at.strftime("%Y-%m-%d %H:%M") %>
+            </div>
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
             <%= comment.comment_text %>
           </div>
