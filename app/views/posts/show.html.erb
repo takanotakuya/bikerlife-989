@@ -7,6 +7,9 @@
         <span>投稿者</span><%= @post.user.nickname %>
       </a>
     </div>
+    <div class="post_date">
+      <pre>投稿日時</pre><%= @post.updated_at.strftime("%Y-%m-%d %H:%M") %>
+    </div>
     <div class="item-img-content">
     <% @post.images.each do |image| %>
       <%= image_tag image, class:'item-box-img' %>
