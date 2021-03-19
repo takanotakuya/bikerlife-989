@@ -3,11 +3,13 @@
     <%=link_to post_like_path(post, post.likes), {method: "delete", remote: true, class: "likes-count"} do %>
       <i class="fas fa-heart haert-red fa-lg faa-pulse animated-hover"></i>
       <%= post.likes.count %><p class="likes">いいね済</p>
+      「いいね済」を削除するにはクリックしたらページをリロードしてね!!
     <% end %>
   <% else %>
     <%=link_to post_likes_path(post), {method: "post", remote: true, class: "likes-count"} do %>
       <i class="far fa-heart heart fa-lg faa-pulse animated-hover"></i>
       <%= post.likes.count %><p class="likes">いいね!!</p>
+      「いいね!!」をクリックしたらページをリロードしてね!!
     <% end %>
   <% end %>
 <% else %>
