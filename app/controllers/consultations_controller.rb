@@ -5,7 +5,7 @@ class ConsultationsController < ApplicationController
   before_action :redirect, only: [:edit, :destroy]
 
   def index
-    @consultations = Consultation.includes(:user).order("created_at DESC")
+    @consultations = Consultation.includes(:user).page(params[:page]).per(9).order("created_at DESC")
   end
 
   def new
