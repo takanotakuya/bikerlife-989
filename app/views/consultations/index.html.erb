@@ -80,7 +80,10 @@
       <%= link_to(new_consultation_path, class: 'purchase-btn') do %>
         <div class='btn-shine'>PUSH 相談</div>
       <% end %>
-    <div>
+    </div>
+    <div class='p-top__paginate'>
+      <%= paginate @consultations %>
+    </div>
   </div>
 </main>
 
