@@ -7,6 +7,9 @@
         <span>投稿者</span><%= @consultation.user.nickname %>
       </a>
     </div>
+    <div class="post_date">
+      <pre>投稿日時</pre><%= @consultation.updated_at.strftime("%Y-%m-%d %H:%M") %>
+    </div>
     <div class="posts_name">
       <%= @consultation.name %>
     </div>
@@ -46,6 +49,9 @@
                 <%= image_tag "/images/hito.png" %>
               </div>
             <% end %>
+            <div class="posts_date">
+              <pre>投稿日時</pre><%= consultations_comment.updated_at.strftime("%Y-%m-%d %H:%M") %>
+            </div>
             <strong><%= link_to consultations_comment.user.nickname, "/users/#{consultations_comment.user_id}" %>：</strong>
             <%= consultations_comment.comment_text %> 
           </div>
