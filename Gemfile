@@ -64,3 +64,4 @@ gem 'image_processing', '~> 1.2'
 gem 'ransack'
 gem 'carrierwave', '~> 2.0'
 gem 'kaminari'
+gem "aws-sdk-s3", require: false
