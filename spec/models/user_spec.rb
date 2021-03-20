@@ -9,6 +9,10 @@ RSpec.describe User, type: :model do
       it 'ユーザー情報全ての項目が存在すれば登録できる' do
         expect(@user).to be_valid
       end
+      it 'ユーザー情報(自己紹介)の項目が無くても登録できる' do
+        @user.self_introduction = ""
+        expect(@user).to be_valid
+      end
     end
     context '新規登録できないとき' do
       it 'ニックネームが空では登録できない' do
