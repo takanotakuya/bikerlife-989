@@ -18,9 +18,9 @@ RSpec.describe Post, type: :model do
 
     context '投稿できない場合' do
       it '画像が空では投稿できない' do
-        @post.image = nil
+        @post.images = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include("画像を入力してください")
+        expect(@post.errors.full_messages).to include("Imagesを入力してください")
       end
       it '投稿名が空では投稿できない' do
         @post.name = ''
