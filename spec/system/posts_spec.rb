@@ -189,7 +189,7 @@ RSpec.describe '写真テキスト詳細', type: :system do
     @post = FactoryBot.create(:post)
   end
   it 'ログインしたユーザーは写真テキスト詳細ページに遷移してコメント投稿欄が表示される' do
-    # ログインする
+    # ポスト1を投稿したユーザーでログインする
     visit new_user_session_path
     fill_in 'Eメール', with: @post.user.email
     fill_in 'パスワード', with: @post.user.password
