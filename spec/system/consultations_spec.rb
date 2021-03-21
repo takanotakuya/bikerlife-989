@@ -60,7 +60,7 @@ RSpec.describe '相談編集', type: :system do
     @consultation1 = FactoryBot.create(:consultation)
     @consultation2 = FactoryBot.create(:consultation)
   end
-  context 'ツイート編集ができるとき' do
+  context '相談が編集ができるとき' do
     it 'ログインしたユーザーは自分が投稿した相談の編集ができる' do
       # 相談1を投稿したユーザーでログインする
       visit new_user_session_path
