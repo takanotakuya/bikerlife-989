@@ -59,7 +59,7 @@ RSpec.describe '写真テキスト編集', type: :system do
     @post1 = FactoryBot.create(:post)
     @post2 = FactoryBot.create(:post)
   end
-  # context 'ツイート編集ができるとき' do
+  # context '写真テキスト編集ができるとき' do
   #   it 'ログインしたユーザーは自分が投稿した写真テキストの編集ができる' do
   #     # ポスト1を投稿したユーザーでログインする
   #     visit new_user_session_path
@@ -199,7 +199,7 @@ RSpec.describe '写真テキスト詳細', type: :system do
     visit posts_path
     # 詳細ページに遷移する
     visit post_path(@post)
-    # 詳細ページにツイートの内容が含まれている
+    # 詳細ページに写真テキストの内容が含まれている
     # expect(page).to have_selector ".content_post[style='background-image: url(#{@post.images});']"
     # expect(page).to have_content("#{@post.post_text}")
     # コメント用のフォームが存在する
@@ -212,7 +212,7 @@ RSpec.describe '写真テキスト詳細', type: :system do
     visit posts_path
     # 詳細ページに遷移する
     visit post_path(@post)
-    # 詳細ページにツイートの内容が含まれている
+    # 詳細ページに写真テキストの内容が含まれている
     # expect(page).to have_selector ".content_post[style='background-image: url(#{@post.images});']"
     # expect(page).to have_content("#{@post.post_text}")
     # フォームが存在しないことを確認する

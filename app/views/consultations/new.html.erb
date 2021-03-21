@@ -8,14 +8,14 @@
   <div class="posts">
     <div class="new-items">
       <div class="weight-bold-text">
-        相談名
+        <%= f.label :相談名 %>
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :name, class:"items-text", id:"item-name", :size=>"60" %>
     </div>
     <div class="news-items">
       <div class="weight-bold-text">
-        相談内容
+        <%= f.label :相談内容 %>
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :post_text, class:"items-text", id:"item-info", size: "60x12" ,rows:"7" %>
