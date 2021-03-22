@@ -34,7 +34,7 @@ class ConsultationsController < ApplicationController
     if @consultation.update(consultation_params)
       redirect_to consultation_path(@consultation.id)
     else
-      render :editf
+      render :edit
     end
   end
 
