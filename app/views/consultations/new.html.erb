@@ -3,10 +3,9 @@
 <div class="post">
 <%= form_with model: @consultation, local: true do |f| %>
 
-<%= render 'shared/error_messages', model: f.object %>
-
   <div class="posts">
     <div class="new-items">
+    <%= render 'shared/error_messages', model: f.object %>
       <div class="weight-bold-text">
         <%= f.label :相談名 %>
         <span class="indispensable">必須</span>

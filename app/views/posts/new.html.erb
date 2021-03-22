@@ -3,10 +3,9 @@
 <div class="post">
 <%= form_with model: @post, local: true do |f| %>
 
-<%= render 'shared/error_messages', model: f.object %>
-
   <div class="posts">
     <div class="img-upload">
+    <%= render 'shared/error_messages', model: f.object %>
       <div class="weight-bold-text">
         投稿画像
         <span class="indispensable">必須</span>
