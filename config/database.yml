@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: bikerlife_989_production
-  username: bikerlife_989
-  password: <%= ENV['BIKERLIFE_989_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
