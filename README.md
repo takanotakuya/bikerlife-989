@@ -287,25 +287,25 @@ VSCode
 
 # テストコード
   * 単体テスト<br>
-    >モデル <br>
-    >>ユーザー機能 実装済み<br>
-    >>写真機能 実装済み<br>
-    >>いいね機能 実装済み<br>
-    >>写真コメント機能 実装済み<br>
-    >>相談機能 実装済み<br>
-    >>相談コメント機能 実装済み<br>
+    `モデル` <br>
+    - [ユーザー機能](https://github.com/takanotakuya/bikerlife-989/blob/master/spec/models/user_spec.rb) 実装済み<br>
+    - [写真機能](https://github.com/takanotakuya/bikerlife-989/blob/master/spec/models/post_spec.rb) 実装済み<br>
+    - [いいね機能](https://github.com/takanotakuya/bikerlife-989/blob/master/spec/models/like_spec.rb) 実装済み<br>
+    - [写真コメント機能](https://github.com/takanotakuya/bikerlife-989/blob/master/spec/models/comment_spec.rb) 実装済み<br>
+    - [相談機能](https://github.com/takanotakuya/bikerlife-989/blob/master/spec/models/consultation_spec.rb) 実装済み<br>
+    - [相談コメント機能](https://github.com/takanotakuya/bikerlife-989/blob/master/spec/models/consultations_comment_spec.rb) 実装済み<br>
 
-    >コントローラー<br>
-    >>写真機能 実装途中<br>
-    >>相談機能 実装途中<br>
-    >>※他コントローラーも随時実装予定<br>
+    `コントローラー`<br>
+    - [写真機能](https://github.com/takanotakuya/bikerlife-989/blob/master/spec/requests/posts_spec.rb) 実装途中<br>
+    - [相談機能](https://github.com/takanotakuya/bikerlife-989/blob/master/spec/requests/consultations_spec.rb) 実装途中<br>
+    ※他コントローラーも随時実装予定<br>
 
-  * 統合テスト<br>
-    >ユーザー機能 実装済み<br>
-    >写真機能 実装済み<br>
-    >写真コメント機能 実装済み<br>
-    >相談機能 実装済み<br>
-    >相談コメント機能 実装済み<br>
+  * `統合テスト`<br>
+    - [ユーザー機能](https://github.com/takanotakuya/bikerlife-989/blob/master/spec/system/users_spec.rb) 実装済み<br>
+    - [写真機能](https://github.com/takanotakuya/bikerlife-989/blob/master/spec/system/posts_spec.rb) 実装済み<br>
+    - [写真コメント機能](https://github.com/takanotakuya/bikerlife-989/blob/master/spec/system/comments_spec.rb) 実装済み<br>
+    - [相談機能](https://github.com/takanotakuya/bikerlife-989/blob/master/spec/system/consultations_spec.rb) 実装済み<br>
+    - [相談コメント機能](https://github.com/takanotakuya/bikerlife-989/blob/master/spec/system/consultation_comments_spec.rb) 実装済み<br>
 
 <br>
 <br>
